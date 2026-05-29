@@ -1,0 +1,56 @@
+{
+    "logo": {
+        "source": "arch",
+        "padding": {
+            "right": 6
+        },
+        "color": {
+            "1": "white",
+            "2": "white"
+        }
+    },
+    "display": {
+        "color": {
+            "keys": "white"
+        }
+    },
+    "modules": [
+        {
+            "type": "title",
+            "color": {
+                "user": "white",
+                "at": "white",
+                "host": "white"
+            }
+        },
+        "separator",
+        "os",
+        "bios",
+        "board",
+        "kernel",
+        "uptime",
+        "processes",
+        "shell",
+        "separator",
+        "display",
+        "separator",
+        "wm",  
+        "terminal",
+        "separator",
+        "cpu",
+        "cpuusage",
+        "gpu",
+        "memory",
+        "swap",
+        "separator",
+        "disk",
+        "separator",     
+        "publicip",
+        "localip",
+        "separator",
+        "break",
+        "break",
+        "separator",
+        "colors"
+    ]
+}

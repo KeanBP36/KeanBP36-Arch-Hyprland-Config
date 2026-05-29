@@ -108,3 +108,4 @@ PROMPT='%F{208}[%n@%m %1~]$ %f'
 # STARTUP
 # ==========================================
 fastfetch
+alias dots-sync='cd ~/dotfiles && git add . && git commit -m "Quick sync" && git push'
