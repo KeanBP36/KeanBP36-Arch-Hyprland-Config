@@ -1,0 +1,73 @@
+configuration {
+    modi: "drun,run,window";
+    show-icons: true;
+    show-modi: false;
+    display-drun: "";
+    display-run: "";
+    display-window: "";
+    font: "JetBrainsMono Nerd Font 12";
+}
+
+* {
+    background-color: transparent;
+    text-color: #ffffff;
+}
+
+window {
+    width: 42%;
+    border-radius: 18px;
+
+    background-color: rgba(15,15,18,0.35);
+    border: 2px;
+    border-color: rgba(255,255,255,0.08);
+}
+
+mainbox {
+    padding: 14px;
+    background-color: transparent;
+}
+
+inputbar {
+    background-color: rgba(0,0,0,0.35);
+    border-radius: 14px;
+    padding: 12px;
+    margin: 0px 0px 12px 0px;
+}
+
+entry {
+    text-color: #ffffff;
+    placeholder: "Search...";
+    placeholder-color: #b0b0b0;
+}
+
+listview {
+    spacing: 8px;
+    lines: 8;
+    background-color: transparent;
+}
+
+element normal.normal {
+    background-color: rgba(35,35,40,0.35);
+    text-color: #ffffff;
+    padding: 10px;
+    border-radius: 14px;
+}
+
+element alternate.normal {
+    background-color: rgba(28,28,32,0.25);
+    text-color: #ffffff;
+    padding: 10px;
+    border-radius: 14px;
+}
+
+element selected.normal {
+    background-color: rgba(80,90,110,0.50);
+    text-color: #ffffff;
+    padding: 10px;
+    border-radius: 14px;
+}
+
+element-icon {
+    size: 22px;
+    margin: 0px 10px 0px 0px;
+}

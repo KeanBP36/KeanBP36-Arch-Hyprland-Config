@@ -1,0 +1,92 @@
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+}
+
+/* -------------------------
+   MAIN BAR (glass style)
+--------------------------*/
+window#waybar {
+    background: rgba( 0, 0, 0, 0.65);
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+/* -------------------------
+   WORKSPACES (clean pills)
+--------------------------*/
+#workspaces button {
+    padding: 4px 8px;
+    color: #aaa;
+    background: transparent;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+#workspaces button.active {
+    color: #fff;
+    background: rgba(255,255,255,0.15);
+}
+
+#workspaces button:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+/* -------------------------
+   MODULES (CPU/GPU/RAM/etc)
+--------------------------*/
+#custom-cpu,
+#custom-gpu,
+#memory,
+#network,
+#pulseaudio,
+#disk,
+#clock {
+    padding: 0 12px;
+    margin: 4px 6px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+}
+
+/* spacing separation (clean gaps) */
+#custom-cpu {
+    margin-right: 10px;
+}
+
+#custom-gpu {
+    margin-right: 10px;
+}
+
+#memory {
+    margin-right: 10px;
+}
+
+/* -------------------------
+   HOVER EFFECT (modern UI)
+--------------------------*/
+#custom-cpu:hover,
+#custom-gpu:hover,
+#memory:hover,
+#network:hover,
+#pulseaudio:hover,
+#disk:hover,
+#clock:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+/* -------------------------
+   ICON STYLE CLEANUP (optional look)
+--------------------------*/
+#network,
+#pulseaudio {
+    font-weight: bold;
+}
+
+/* -------------------------
+   CENTER CLOCK EMPHASIS
+--------------------------*/
+#clock {
+    font-weight: bold;
+    background: rgba(255,255,255,0.08);
+}
