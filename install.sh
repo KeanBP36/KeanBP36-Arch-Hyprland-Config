@@ -1,7 +1,7 @@
 #!/bin/bash
 # 1. Update system and install required apps
 sudo pacman -Syu --noconfirm
-sudo pacman -S --noconfirm firefox kitty rofi-wayland waybar fastfetch hyprlock zsh
+sudo pacman -S --noconfirm firefox kitty rofi-wayland waybar fastfetch hyprlock zsh aww
 
 # 2. Make sure .config exists
 mkdir -p ~/.config
