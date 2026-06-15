@@ -25,3 +25,6 @@ to update to the new configs just run
 ```bash
 alias update-dots='cd ~/dotfiles && git pull && ln -sfT ~/dotfiles/.bashrc ~/.bashrc && ln -sfT ~/dotfiles/hypr ~/.config/hypr'
 ```
+to reinstalall all the pakages needed for this
+```bash
+cd ~/dotfiles && git pull && ./install.sh
