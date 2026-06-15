@@ -5,6 +5,6 @@
 - **Fastfetch**: 
 - **Shell**: 
 - **hyplock**:
-- **aww**:
+- **awww**:
 ```bash
 git clone https://github.com/KeanBP36/KeanBP36-Arch-Hyprland-Config.git ~/dotfiles && cd ~/dotfiles && chmod +x install.sh && ./install.sh
