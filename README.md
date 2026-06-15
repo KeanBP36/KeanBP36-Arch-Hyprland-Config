@@ -3,7 +3,7 @@
 ![Fastfetch](fastfetch.png)
 ![Hyprland Config](hyprland-config-full.jpg)
 ![Rofi Launcher](rofi.png)
-![Tiling Layout](windows.png)
+![Tiling Layout](windows.jpg)
 
 - **Hyprland**:
 - **Waybar**: 
