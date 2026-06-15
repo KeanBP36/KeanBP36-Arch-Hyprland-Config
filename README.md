@@ -1,3 +1,10 @@
+# Screenshots
+
+![Fastfetch](fastfetch.png)
+![Hyprland Config](hyprland-config-full.jpg)
+![Rofi Launcher](rofi.png)
+![Tiling Layout](tiling.jpg)
+
 - **Hyprland**:
 - **Waybar**: 
 - **Rofi**: 
