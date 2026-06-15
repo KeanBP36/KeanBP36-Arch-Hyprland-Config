@@ -65,5 +65,5 @@ alias foot.conf='nano ~/.config/foot/foot.ini'
 alias clean="sudo pacman -Sc && flatpak uninstall --unused && sudo journalctl --vacuum-size=100M"
 alias updatedots='cd ~/dotfiles && git add . && git commit -m "Update: $(date)" && git push'
 alias gpush='cd ~/dotfiles && git add . && git commit -m "Update: $(date)" && git push'
-alias gup='cd ~/dotfiles && git pull'
+alias gpull='cd ~/dotfiles && git pull'
 alias update-dots='~/dotfiles/update.sh'
