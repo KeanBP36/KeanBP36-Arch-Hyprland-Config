@@ -2,10 +2,36 @@
 set -e
 
 # --- Configuration ---
-# Ensure this matches the folder name created by git clone
 DEST_DIR="$HOME/dotfiles"
+REPO_URL="https://github.com/KeanBP36/KeanBP36-Arch-Hyprland-Config.git"
 
-echo "Cleaning up old configurations..."
+echo "Updating system..."
+sudo pacman -Syu --noconfirm
+# Install basic requirements from official repos
+sudo pacman -S --noconfirm git firefox kitty waybar fastfetch hyprlock zsh
+
+# Ensure we have an AUR helper (if you don't have yay, this handles it)
+if ! command -v yay &> /dev/null; then
+    echo "Installing yay (AUR helper)..."
+    sudo pacman -S --noconfirm --needed base-devel
+    git clone https://aur.archlinux.org/yay.git /tmp/yay
+    (cd /tmp/yay && makepkg -si --noconfirm)
+fi
+
+# Clone or Update dotfiles
+if [ ! -d "$DEST_DIR" ]; then
+    echo "Cloning dotfiles..."
+    git clone "$REPO_URL" "$DEST_DIR"
+else
+    echo "Dotfiles already exist. Pulling latest changes..."
+    (cd "$DEST_DIR" && git pull)
+fi
+
+echo "Installing AUR packages..."
+yay -S --noconfirm rofi-wayland swww
+
+echo "Cleaning up old configs and applying new ones..."
+# Only delete AFTER verifying we have the new files
 rm -rf "$HOME/.config/hypr"
 rm -rf "$HOME/.config/waybar"
 rm -rf "$HOME/.config/rofi"
@@ -13,28 +39,11 @@ rm -rf "$HOME/.config/fastfetch"
 rm -f "$HOME/.zshrc"
 rm -f "$HOME/.bashrc"
 
-echo "Updating system and installing packages..."
-sudo pacman -Syu --noconfirm
-sudo pacman -S --noconfirm git firefox kitty rofi-wayland waybar fastfetch hyprlock swww zsh
-
-if [ ! -d "$DEST_DIR" ]; then
-    echo "Cloning dotfiles..."
-    git clone "https://github.com/KeanBP36/KeanBP36-Arch-Hyprland-Config.git" "$DEST_DIR"
-else
-    echo "Dotfiles already exist. Pulling latest changes..."
-    cd "$DEST_DIR" && git pull
-fi
-
 mkdir -p "$HOME/.config"
 
-echo "Creating symlinks..."
-
-# Hyprland link with delay to ensure clean deletion
-rm -rf "$HOME/.config/hypr"
+# Create symlinks
 sleep 1
-ln -sfn "$DEST_DIR/hypr" "$HOME/.config/hypr"
-
-# Other links
+ln -sfn "$DEST_DIR/hypr"      "$HOME/.config/hypr"
 ln -sfn "$DEST_DIR/waybar"    "$HOME/.config/waybar"
 ln -sfn "$DEST_DIR/rofi"      "$HOME/.config/rofi"
 ln -sfn "$DEST_DIR/fastfetch" "$HOME/.config/fastfetch"
