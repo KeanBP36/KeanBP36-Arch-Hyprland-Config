@@ -23,5 +23,5 @@ chmod +x install.sh && \
 ```
 to update to the new configs just run 
 ```bash
-cd ~/dotfiles && git pull && ./install.sh
+alias update-dots='cd ~/dotfiles && git pull && ln -sfT ~/dotfiles/.bashrc ~/.bashrc && ln -sfT ~/dotfiles/hypr ~/.config/hypr'
 ```
