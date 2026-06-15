@@ -3,11 +3,9 @@ set -e
 
 # --- Configuration ---
 # Ensure this matches the folder name created by git clone
-# If it clones as 'KeanBP36-Arch-Hyprland-Config', change this:
 DEST_DIR="$HOME/dotfiles"
 
 echo "Cleaning up old configurations..."
-# Remove only if they are not already the correct symlinks
 rm -rf "$HOME/.config/hypr"
 rm -rf "$HOME/.config/waybar"
 rm -rf "$HOME/.config/rofi"
@@ -30,8 +28,13 @@ fi
 mkdir -p "$HOME/.config"
 
 echo "Creating symlinks..."
-# -sfn ensures we link correctly and don't create links-inside-links
-ln -sfn "$DEST_DIR/hypr"      "$HOME/.config/hypr"
+
+# Hyprland link with delay to ensure clean deletion
+rm -rf "$HOME/.config/hypr"
+sleep 1
+ln -sfn "$DEST_DIR/hypr" "$HOME/.config/hypr"
+
+# Other links
 ln -sfn "$DEST_DIR/waybar"    "$HOME/.config/waybar"
 ln -sfn "$DEST_DIR/rofi"      "$HOME/.config/rofi"
 ln -sfn "$DEST_DIR/fastfetch" "$HOME/.config/fastfetch"
