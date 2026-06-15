@@ -20,3 +20,8 @@ git clone https://github.com/KeanBP36/KeanBP36-Arch-Hyprland-Config.git ~/dotfil
 cd ~/dotfiles && \
 chmod +x install.sh && \
 ./install.sh
+```
+to update to the new configs just run 
+```bash
+cd ~/dotfiles && git pull && ./install.sh
+```
