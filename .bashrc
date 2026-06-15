@@ -60,3 +60,7 @@ alias dunst.conf='nano ~/.config/dunst/dunstrc'
 
 # Foot terminal
 alias foot.conf='nano ~/.config/foot/foot.ini'
+
+
+alias clean="sudo pacman -Sc && flatpak uninstall --unused && sudo journalctl --vacuum-size=100M"
+alias updatedots='cd ~/dotfiles && git add . && git commit -m "Update: $(date)" && git push'

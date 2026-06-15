@@ -109,3 +109,5 @@ PROMPT='%F{208}[%n@%m %1~]$ %f'
 # ==========================================
 fastfetch
 alias dots-sync='cd ~/dotfiles && git add . && git commit -m "Quick sync" && git push'
+
+alias ssh='TERM=xterm-256color ssh'
