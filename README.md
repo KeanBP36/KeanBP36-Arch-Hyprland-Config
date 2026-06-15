@@ -30,8 +30,4 @@ chmod +x install.sh && \
 ```
 to update to the new configs just run 
 ```bash
-update-dots
-```
-to reinstalall all the pakages needed for this
-```bash
 cd ~/dotfiles && git pull && ./install.sh
