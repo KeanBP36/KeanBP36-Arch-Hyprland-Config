@@ -1,6 +1,6 @@
 # Screenshots
 
-![Fastfetch](fastfetch.png)
+![Fastfetch](fastfetch.xcf)
 ![Hyprland Config](hyprland-config-full.jpg)
 ![Rofi Launcher](rofi.png)
 ![Tiling Layout](tiling.jpg)
