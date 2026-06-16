@@ -7,10 +7,9 @@ REPO_URL="https://github.com/KeanBP36/KeanBP36-Arch-Hyprland-Config.git"
 
 echo "Updating system..."
 sudo pacman -Syu --noconfirm
-# Install basic requirements from official repos
 sudo pacman -S --noconfirm git firefox kitty waybar fastfetch hyprlock zsh
 
-# Ensure we have an AUR helper (if you don't have yay, this handles it)
+# Ensure AUR helper
 if ! command -v yay &> /dev/null; then
     echo "Installing yay (AUR helper)..."
     sudo pacman -S --noconfirm --needed base-devel
@@ -23,31 +22,40 @@ if [ ! -d "$DEST_DIR" ]; then
     echo "Cloning dotfiles..."
     git clone "$REPO_URL" "$DEST_DIR"
 else
-    echo "Dotfiles already exist. Pulling latest changes..."
+    echo "Updating existing dotfiles..."
     (cd "$DEST_DIR" && git pull)
 fi
 
 echo "Installing AUR packages..."
 yay -S --noconfirm rofi-wayland swww
 
-echo "Cleaning up old configs and applying new ones..."
-# Only delete AFTER verifying we have the new files
-rm -rf "$HOME/.config/hypr"
-rm -rf "$HOME/.config/waybar"
-rm -rf "$HOME/.config/rofi"
-rm -rf "$HOME/.config/fastfetch"
-rm -f "$HOME/.zshrc"
-rm -f "$HOME/.bashrc"
-
+echo "Applying configs..."
 mkdir -p "$HOME/.config"
 
-# Create symlinks
-sleep 1
-ln -sfn "$DEST_DIR/hypr"      "$HOME/.config/hypr"
-ln -sfn "$DEST_DIR/waybar"    "$HOME/.config/waybar"
-ln -sfn "$DEST_DIR/rofi"      "$HOME/.config/rofi"
-ln -sfn "$DEST_DIR/fastfetch" "$HOME/.config/fastfetch"
-ln -sf  "$DEST_DIR/.zshrc"    "$HOME/.zshrc"
-ln -sf  "$DEST_DIR/.bashrc"   "$HOME/.bashrc"
+# Remove old configs safely (using || true so it doesn't exit on error)
+rm -rf "$HOME/.config/hypr" || true
+rm -rf "$HOME/.config/waybar" || true
+rm -rf "$HOME/.config/rofi" || true
+rm -rf "$HOME/.config/fastfetch" || true
+rm -f "$HOME/.zshrc" || true
+rm -f "$HOME/.bashrc" || true
 
-echo "Install complete! Please enter nano ~/.config/hypr/hyprland.conf and uncoment your gpu mornern nvidia cards are the defult if u are not using a morned nvidia card pls coment it out and uncoment your selected gpu befor u resrart."
+# Function to safely create symlinks
+link_config() {
+    if [ -d "$1" ] || [ -f "$1" ]; then
+        ln -sfn "$1" "$2"
+        echo "Linked: $2"
+    else
+        echo "WARNING: Source $1 not found, skipping."
+    fi
+}
+
+# Create symlinks
+link_config "$DEST_DIR/hypr"      "$HOME/.config/hypr"
+link_config "$DEST_DIR/waybar"    "$HOME/.config/waybar"
+link_config "$DEST_DIR/rofi"      "$HOME/.config/rofi"
+link_config "$DEST_DIR/fastfetch" "$HOME/.config/fastfetch"
+link_config "$DEST_DIR/.zshrc"    "$HOME/.zshrc"
+link_config "$DEST_DIR/.bashrc"   "$HOME/.bashrc"
+
+echo "Install complete! Please edit ~/.config/hypr/hyprland.conf to configure your GPU."
