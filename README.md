@@ -28,3 +28,7 @@ cd ~/dotfiles && \
 chmod +x install.sh && \
 ./install.sh
 ```
+to updae your conifg
+```bash
+git clone [https://github.com/KeanBP36/KeanBP36-Arch-Hyprland-Config.git](https://github.com/KeanBP36/KeanBP36-Arch-Hyprland-Config.git) ~/dotfiles
+```
