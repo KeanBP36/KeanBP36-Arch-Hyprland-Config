@@ -50,4 +50,4 @@ ln -sfn "$DEST_DIR/fastfetch" "$HOME/.config/fastfetch"
 ln -sf  "$DEST_DIR/.zshrc"    "$HOME/.zshrc"
 ln -sf  "$DEST_DIR/.bashrc"   "$HOME/.bashrc"
 
-echo "Install complete! Please restart your terminal or log out/in."
+echo "Install complete! Please enter nano ~/.config/hypr/hyprland.conf and uncoment your gpu mornern nvidia cards are the defult if u are not using a morned nvidia card pls coment it out and uncoment your selected gpu befor u resrart."
