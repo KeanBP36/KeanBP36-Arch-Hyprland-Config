@@ -27,16 +27,17 @@ else
 fi
 
 echo "Installing AUR packages..."
-yay -S --noconfirm rofi-wayland swww
+yay -S --noconfirm rofi-wayland swww wlogout
 
 echo "Applying configs..."
 mkdir -p "$HOME/.config"
 
-# Remove old configs safely (using || true so it doesn't exit on error)
+# Remove old configs safely
 rm -rf "$HOME/.config/hypr" || true
 rm -rf "$HOME/.config/waybar" || true
 rm -rf "$HOME/.config/rofi" || true
 rm -rf "$HOME/.config/fastfetch" || true
+rm -rf "$HOME/.config/wlogout" || true
 rm -f "$HOME/.zshrc" || true
 rm -f "$HOME/.bashrc" || true
 
@@ -55,7 +56,8 @@ link_config "$DEST_DIR/hypr"      "$HOME/.config/hypr"
 link_config "$DEST_DIR/waybar"    "$HOME/.config/waybar"
 link_config "$DEST_DIR/rofi"      "$HOME/.config/rofi"
 link_config "$DEST_DIR/fastfetch" "$HOME/.config/fastfetch"
+link_config "$DEST_DIR/wlogout"   "$HOME/.config/wlogout"
 link_config "$DEST_DIR/.zshrc"    "$HOME/.zshrc"
 link_config "$DEST_DIR/.bashrc"   "$HOME/.bashrc"
 
-echo "Install complete! Please edit ~/.config/hypr/hyprland.conf to configure your GPU."
+echo "Install complete!"
