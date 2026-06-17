@@ -1,29 +1,31 @@
-* {
-    background-image: none;
-}
-
 window {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 button {
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    color: #FFFFFF;
-    margin: 20px;
     background-repeat: no-repeat;
-    background-position: center 30%;
-    background-size: 64px;
-    padding-top: 100px;
+    background-position: center;
+    background-size: 25%;
+    /* Neutral semi-transparent white */
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    margin: 20px;
+    background-origin: content-box;
+    background-clip: content-box;
 }
 
-button:hover, button:focus {
-    background-color: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
+/* Re-apply the images */
+#lock { background-image: url("/usr/share/wlogout/icons/lock.png"); }
+#logout { background-image: url("/usr/share/wlogout/icons/logout.png"); }
+#suspend { background-image: url("/usr/share/wlogout/icons/suspend.png"); }
+#bios { background-image: url("/usr/share/wlogout/icons/reboot.png"); }
+#shutdown { background-image: url("/usr/share/wlogout/icons/shutdown.png"); }
+#reboot { background-image: url("/usr/share/wlogout/icons/reboot.png"); }
 
-#shutdown { background-image: url("/home/kean/.config/wlogout/icons/shutdown.svg"); }
-#reboot   { background-image: url("/home/kean/.config/wlogout/icons/reboot.svg"); }
-#sleep    { background-image: url("/home/kean/.config/wlogout/icons/sleep.svg"); }
-#bios     { background-image: url("/home/kean/.config/wlogout/icons/bios.svg"); }
+button:focus, button:hover {
+    /* Using a pure neutral grey to ensure no purple tint */
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+}
