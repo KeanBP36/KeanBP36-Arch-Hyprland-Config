@@ -67,3 +67,4 @@ alias updatedots='cd ~/dotfiles && git add . && git commit -m "Update: $(date)" 
 alias gpush='cd ~/dotfiles && git add . && git commit -m "Update: $(date)" && git push'
 alias gpull='cd ~/dotfiles && git pull'
 alias update-dots='~/dotfiles/update.sh'
+alias dot="codium ~/dotfiles"
