@@ -1,31 +1,85 @@
+:root {
+    --main-fg: #ffffff;
+}
+
+* {
+    background-image: none;
+    font-size: 16px;
+}
+
 window {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(20, 20, 30, 0.4);
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 button {
+    color: var(--main-fg);
+    background-color: rgba(20, 20, 30, 0.6);
+    border: none;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 25%;
-    /* Neutral semi-transparent white */
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
-    border: none;
-    border-radius: 10px;
-    margin: 20px;
-    background-origin: content-box;
-    background-clip: content-box;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 35px 60px;
+
+    transition: all 0.2s ease;
 }
 
-/* Re-apply the images */
-#lock { background-image: url("/usr/share/wlogout/icons/lock.png"); }
-#logout { background-image: url("/usr/share/wlogout/icons/logout.png"); }
-#suspend { background-image: url("/usr/share/wlogout/icons/suspend.png"); }
-#bios { background-image: url("/usr/share/wlogout/icons/reboot.png"); }
-#shutdown { background-image: url("/usr/share/wlogout/icons/shutdown.png"); }
-#reboot { background-image: url("/usr/share/wlogout/icons/reboot.png"); }
+button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    background-size: 50%;
+    border-radius: 20px;
+}
 
-button:focus, button:hover {
-    /* Using a pure neutral grey to ensure no purple tint */
-    background-color: rgba(255, 255, 255, 0.2);
-    border: none;
+button:focus {
+    background-color: rgba(168, 139, 250, 0.0);
+    background-size: 40%;
+}
+
+/* TEXTO */
+button label {
+    font-size: 13px;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+/* OCULTAR TEXTO */
+button:hover label {
+    opacity: 0;
+}
+
+button:focus label {
+    opacity: 0;
+}
+
+/* ICONOS */
+#lock {
+    background-image: url("/home/andrey/.config/wlogout/icons/lock.png");
+}
+
+#logout {
+    background-image: url("/home/andrey/.config/wlogout/icons/logout.png");
+}
+
+#hibernate {
+    background-image: url("/home/andrey/.config/wlogout/icons/hibernate.png");
+}
+
+#shutdown {
+    background-image: url("/home/andrey/.config/wlogout/icons/shutdown.png");
+    background-color: rgba(255, 80, 80, 0.3);
+}
+
+#reboot {
+    background-image: url("/home/andrey/.config/wlogout/icons/reboot.png");
+}
+
+#suspend {
+    background-image: url("/home/andrey/.config/wlogout/icons/suspend.png");
 }

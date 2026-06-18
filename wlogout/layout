@@ -1,44 +1,41 @@
-[
 {
-"label": "lock",
-"action": "hyprlock",
-"text": "LOCK",
-"keybind": "l"
+    "label": "lock",
+    "action": "hyprlock",
+    "text": "Lock",
+    "keybind": "l"
 },
+
 {
-"label": "logout",
-"action": "hyprctl dispatch exit",
-"text": "LOGOUT",
-"keybind": "e"
+    "label": "logout",
+    "action": "hyprctl dispatch exit",
+    "text": "Logout",
+    "keybind": "e"
 },
+
 {
-"label": "suspend",
-"action": "loginctl suspend",
-"text": "SUSPEND",
-"keybind": "s"
+    "label": "suspend",
+    "action": "lockscreen.sh & disown && systemctl suspend",
+    "text": "Suspend",
+    "keybind": "u"
 },
+
 {
-"label": "hibernate",
-"action": "loginctl hibernate",
-"text": "HIBERNATE",
-"keybind": "h"
+    "label": "shutdown",
+    "action": "systemctl poweroff",
+    "text": "Shutdown",
+    "keybind": "s"
 },
+
 {
-"label": "shutdown",
-"action": "loginctl poweroff",
-"text": "SHUTDOWN",
-"keybind": "u"
+    "label": "hibernate",
+    "action": "systemctl hibernate",
+    "text": "Hibernate",
+    "keybind": "h"
 },
+
 {
-"label": "reboot",
-"action": "loginctl reboot",
-"text": "REBOOT",
-"keybind": "r"
-},
-{
-"label": "bios",
-"action": "systemctl reboot --firmware-setup",
-"text": "BIOS",
-"keybind": "b"
+    "label": "reboot",
+    "action": "systemctl reboot",
+    "text": "Reboot",
+    "keybind": "r"
 }
-]
