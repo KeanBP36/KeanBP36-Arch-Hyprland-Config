@@ -13,6 +13,7 @@
 - **Shell**: 
 - **hyplock**:
 - **awww**:
+- **wlogout**:
 
 
 ```bash
