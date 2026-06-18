@@ -64,7 +64,10 @@ alias foot.conf='nano ~/.config/foot/foot.ini'
 
 alias clean="sudo pacman -Sc && flatpak uninstall --unused && sudo journalctl --vacuum-size=100M"
 alias updatedots='cd ~/dotfiles && git add . && git commit -m "Update: $(date)" && git push'
-alias gpush='cd ~/dotfiles && git add . && git commit -m "Update: $(date)" && git push'
-alias gpull='cd ~/dotfiles && git pull'
+#alias gpush='cd ~/dotfiles && git add . && git commit -m "Update: $(date)" && git push'
+#alias gpull='cd ~/dotfiles && git pull'
 alias update-dots='~/dotfiles/update.sh'
 alias dot="codium ~/dotfiles"
+# Add these to your shell config file
+alias gpull='git pull origin main'
+alias gpush='git add . && git commit -m "Auto-sync: $(date)" && git push origin main'
