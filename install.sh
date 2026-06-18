@@ -60,4 +60,4 @@ link_config "$DEST_DIR/wlogout"   "$HOME/.config/wlogout"
 link_config "$DEST_DIR/.zshrc"    "$HOME/.zshrc"
 link_config "$DEST_DIR/.bashrc"   "$HOME/.bashrc"
 
-echo "Install complete!"
+echo "Install complete! PLS configure as needed befor reboot"
