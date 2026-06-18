@@ -60,26 +60,26 @@ button:focus label {
 
 /* ICONOS */
 #lock {
-    background-image: url("/home/andrey/.config/wlogout/icons/lock.png");
+    background-image: url("/home/kean/.config/wlogout/icons/lock.png");
 }
 
 #logout {
-    background-image: url("/home/andrey/.config/wlogout/icons/logout.png");
+    background-image: url("/home/kean/.config/wlogout/icons/logout.png");
 }
 
 #hibernate {
-    background-image: url("/home/andrey/.config/wlogout/icons/hibernate.png");
+    background-image: url("/home/kean/.config/wlogout/icons/hibernate.png");
 }
 
 #shutdown {
-    background-image: url("/home/andrey/.config/wlogout/icons/shutdown.png");
+    background-image: url("/home/kean/.config/wlogout/icons/shutdown.png");
     background-color: rgba(255, 80, 80, 0.3);
 }
 
 #reboot {
-    background-image: url("/home/andrey/.config/wlogout/icons/reboot.png");
+    background-image: url("/home/kean/.config/wlogout/icons/reboot.png");
 }
 
 #suspend {
-    background-image: url("/home/andrey/.config/wlogout/icons/suspend.png");
+    background-image: url("/home/kean/.config/wlogout/icons/suspend.png");
 }
