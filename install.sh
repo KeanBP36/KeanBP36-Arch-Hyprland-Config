@@ -27,7 +27,7 @@ else
 fi
 
 echo "Installing AUR packages..."
-yay -S --noconfirm rofi-wayland swww wlogout
+yay -S --noconfirm rofi-wayland swww wlogout bibata-cursor-theme
 
 echo "Applying configs..."
 mkdir -p "$HOME/.config"
