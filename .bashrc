@@ -71,3 +71,4 @@ alias dot="codium ~/dotfiles"
 # Add these to your shell config file
 alias gpull='git pull origin main'
 alias gpush='git add . && git commit -m "Auto-sync: $(date)" && git push origin main'
+alias sleep='systemctl suspend'
