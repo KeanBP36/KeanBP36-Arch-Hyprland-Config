@@ -34,7 +34,7 @@
         "separator",
         "display",
         "separator",
-        "wm",  
+        "wm",
         "terminal",
         "separator",
         "cpu",
@@ -43,8 +43,11 @@
         "memory",
         "swap",
         "separator",
-        "disk",
-        "separator",     
+        {
+            "type": "disk",
+            "precise": true
+        },
+        "separator",
         "publicip",
         "localip",
         "separator",

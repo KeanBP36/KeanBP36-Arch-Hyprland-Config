@@ -72,3 +72,8 @@ alias dot="codium ~/dotfiles"
 alias gpull='git pull origin main'
 alias gpush='git add . && git commit -m "Auto-sync: $(date)" && git push origin main'
 alias sleep='systemctl suspend'
+#alias virus-scan='sudo clamscan -r -i --max-filesize=50M --max-scansize=50M --exclude-dir="^/sys|^/proc|^/dev|^/\.snapshots|^/mnt|^/var/log|^/var/cache"'
+alias home-scan='clamscan -r -i --max-filesize=100M --max-scansize=100M ~'
+#alias virus-scan='sudo clamdscan --multiscan --fdpass'
+alias virus-scan='sudo clamdscan --multiscan --fdpass /'
+
