@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Define the screenshot directory
+DIR="$HOME/Pictures/Screenshots"
+mkdir -p "$DIR"
+
+# Capture the target (area/screen/window) and pipe to swappy
+# $1 refers to the argument passed from your hyprland.conf (e.g., "area")
+case $1 in
+    area)
+        grimblast --freeze save area - | swappy -f -
+        ;;
+    screen)
+        grimblast save screen - | swappy -f -
+        ;;
+    active)
+        grimblast save active - | swappy -f -
+        ;;
+    output)
+        grimblast save output - | swappy -f -
+        ;;
+    *)
+        echo "Usage: $0 {area|screen|active|output}"
+        exit 1
+        ;;
+esac
