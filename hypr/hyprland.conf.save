@@ -58,21 +58,26 @@ $menu = rofi -show drun
 
 
 # --------------------
+
 # MONITOR
+
 # --------------------
 
-# HDMI-A-1 is now at 0x0 (Left side)
-monitor = HDMI-A-1, 1920x1080@60, 0x0, 1
 
-# DP-1 is now at 1920x0 (Right side)
-monitor = DP-1, 1920x1080@100, 1920x0, 1
+exec-once = lua ~/.config/hypr/split-monitor-workspaces/lua/init.lua
 
-# Bindings to ensure workspaces stay on the correct screen
+monitor = DP-1,1920x1080@100,1920x0,1
+
+monitor = HDMI-A-1,1920x1080@60,0x0,1
+
+
 workspace = 1, monitor:DP-1
+
 workspace = 2, monitor:HDMI-A-1
 
-# Fallback
+
 monitor = ,preferred,auto,1
+
 
 # --------------------
 # GENERAL
@@ -228,33 +233,9 @@ bind = SUPER SHIFT, D, movewindow, mon:-1
 bindm = $mainMod, mouse:272, movewindow
 bindm = $mainMod, mouse:273, resizewindow
 
-#---------------------
 # SCREENSHOT
-#---------------------
-
-# --- Area Selection ---
-# SUPER + S: Copy area to clipboard + Notify
-bind = SUPER, S, exec, grimblast copy area && notify-send "Screenshot" "Area copied to clipboard"
-# SUPER + SHIFT + S: Save area + Notify
-bind = SUPER SHIFT, S, exec, grimblast --notify copysave area
-
-# --- Active Window ---
-# SUPER + ALT + S: Copy window to clipboard + Notify
-bind = SUPER ALT, S, exec, grimblast copy active && notify-send "Screenshot" "Window copied to clipboard"
-# SUPER + SHIFT + ALT + S: Save window + Notify
-bind = SUPER SHIFT ALT, S, exec, grimblast --notify copysave active
-
-# --- Current Screen (Output) ---
-# SUPER + P: Copy current screen + Notify
-bind = SUPER, P, exec, grimblast copy output && notify-send "Screenshot" "Screen copied to clipboard"
-# SUPER + SHIFT + P: Save current screen + Notify
-bind = SUPER SHIFT, P, exec, grimblast --notify copysave output
-
-# --- All Screens ---
-# SUPER + A: Copy all screens + Notify
-bind = SUPER, A, exec, grimblast copy screen && notify-send "Screenshot" "All screens copied to clipboard"
-# SUPER + SHIFT + A: Save all screens + Notify
-bind = SUPER SHIFT, A, exec, grimblast --notify copysave screen
+#bind = SUPER, S, exec, grimblast copy area
+bind = SUPER, S, exec, grimblast --notify copysave area
 
 # --------------------
 # WINDOW RULES
