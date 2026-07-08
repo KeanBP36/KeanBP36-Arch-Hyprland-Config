@@ -9,12 +9,12 @@ echo "Updating system..."
 sudo pacman -Syu --noconfirm
 sudo pacman -S --noconfirm git firefox kitty waybar fastfetch hyprlock zsh
 
-# Ensure AUR helper
-if ! command -v yay &> /dev/null; then
-    echo "Installing yay (AUR helper)..."
+# Ensure AUR helper (Paru)
+if ! command -v paru &> /dev/null; then
+    echo "Installing paru (AUR helper)..."
     sudo pacman -S --noconfirm --needed base-devel
-    git clone https://aur.archlinux.org/yay.git /tmp/yay
-    (cd /tmp/yay && makepkg -si --noconfirm)
+    git clone https://aur.archlinux.org/paru.git /tmp/paru
+    (cd /tmp/paru && makepkg -si --noconfirm)
 fi
 
 # Clone or Update dotfiles
@@ -27,10 +27,11 @@ else
 fi
 
 echo "Installing AUR packages..."
-yay -S --noconfirm rofi-wayland swww wlogout bibata-cursor-theme
+paru -S --noconfirm rofi-wayland swww wlogout bibata-cursor-theme
 
 echo "Applying configs..."
 mkdir -p "$HOME/.config"
+mkdir -p "$HOME/.local/bin"
 
 # Remove old configs safely
 rm -rf "$HOME/.config/hypr" || true
@@ -60,4 +61,11 @@ link_config "$DEST_DIR/wlogout"   "$HOME/.config/wlogout"
 link_config "$DEST_DIR/.zshrc"    "$HOME/.zshrc"
 link_config "$DEST_DIR/.bashrc"   "$HOME/.bashrc"
 
-echo "Install complete! PLS configure as needed befor reboot"
+# Link scripts to ~/.local/bin/
+echo "Linking scripts..."
+for script in "$DEST_DIR/scripts/"*.sh; do
+    ln -sfn "$script" "$HOME/.local/bin/$(basename "$script")"
+    echo "Linked script: $(basename "$script")"
+done
+
+echo "Install complete! Please configure as needed before reboot."
